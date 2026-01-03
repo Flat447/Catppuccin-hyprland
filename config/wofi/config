@@ -1,0 +1,20 @@
+# Позиция и размер
+show=center         # Где показать: center, top, bottom, left, right
+width=1000           # Ширина в пикселях
+height=500          # Высота в пикселях
+
+# Внешний вид
+mode=drun           # Режим: run, drun, combi
+prompt=Search...    # Текст подсказки
+filter_rate=100     # Скорость фильтрации
+allow_markup=true   # Разрешить разметку
+no_actions=true     # Скрыть действия
+always_parse_args=true
+allow_images=true
+image_size=32
+no_actions=true
+hide_action_arrows=true
+columns=1
+lines=10
+cycle=true
+orientation=vertical

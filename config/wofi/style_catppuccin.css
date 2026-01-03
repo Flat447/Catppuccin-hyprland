@@ -1,0 +1,93 @@
+/*TODO: ОСНОВНЫЕ ЦВЕТА*/
+@define-color magenta #CBA6F7;
+@define-color blue #89B4FA;
+@define-color sapphire #70BCE0;
+@define-color yellow #F9E2AF;
+@define-color white #B8C0E0;
+@define-color white2 #A5ADCD;
+@define-color green #A6E3A1;
+@define-color red #F38BA8;
+@define-color orange #FAB387;
+/*TODO: ОВЕРЛЕИ*/
+@define-color overlay1 #3A3B49;
+@define-color overlay2 #262635;
+@define-color overlay3 #363746;
+/*TODO: БЭКГРАУНД И ФОРГРАУНД*/
+@define-color foreground #DFE1E6;
+@define-color background #1E1E2E;
+/* Окно wofi */
+window {
+    all: unset;
+    margin: 0;
+    border: 2px solid @sapphire;
+    border-radius: 20px;
+    background-color: @background;
+    font-family: "JetBrains Mono Medium", "Symbols Nerd Font";
+    font-size: 16px;
+}
+
+/* Поле ввода */
+#input {
+    margin: 0;
+    padding: 10px;
+    color: #foreground;
+    border-radius: 20px 20px 0 0;
+    border: 2px solid @sapphire;
+    background-color: @overlay1;
+}
+#input:focus {
+    border: 2px solid @sapphire;
+    border-radius: 20px 20px 0 0;
+}
+
+/* Элементы списка */
+#inner-box {
+    margin: 0 1px 0 1px;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+#outer-box {
+    margin: 0;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+#scroll {
+    margin: 0px;
+    border: none;
+}
+
+/* Элемент списка */
+#entry {
+    margin: 6px;
+    padding: 8px;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+/* Выделенный элемент */
+#entry:selected {
+    background-color: @sapphire;
+    border-radius: 20px;
+    outline: none;
+}
+
+/* Текст элемента */
+#entry > box {
+    margin-left: 10px;
+    color: @foreground;
+}
+
+/* Текст выделенного элемента */
+#entry:selected #text {
+    color: @background;
+}
+
+/* Иконки */
+#img {
+    margin-right: 5px;
+}

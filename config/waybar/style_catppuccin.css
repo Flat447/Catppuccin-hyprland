@@ -1,0 +1,186 @@
+/*TODO: ОСНОВНЫЕ ЦВЕТА*/
+@define-color magenta #CBA6F7;
+@define-color blue #89B4FA;
+@define-color sapphire #70BCE0;
+@define-color yellow #F9E2AF;
+@define-color white #B8C0E0;
+@define-color white2 #A5ADCD;
+@define-color green #A6E3A1;
+@define-color red #F38BA8;
+@define-color orange #FAB387;
+/*TODO: ОВЕРЛЕИ*/
+@define-color overlay1 #3A3B49;
+@define-color overlay2 #262635;
+@define-color overlay3 #363746;
+/*TODO: БЭКГРАУНД И ФОРГРАУНД*/
+@define-color foreground #DFE1E6;
+@define-color background #1E1E2E;
+
+* {
+    font-family: "JetBrains Mono Medium", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 16px;
+}
+
+window#waybar {
+    color: @foreground;
+    background-color: transparent;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+}
+
+#zvuk {
+    background-color: @background;
+    border: 2px solid @sapphire;
+    border-radius: 20px;
+    margin: 0 5px;
+}
+#pulseaudio {
+    padding: 6px 10px;
+}
+#pulseaudio.output {
+    margin: 0 0 0 5px;
+}
+#pulseaudio.input {
+    margin: 0 5px 0 0;
+}
+#pulseaudio.output.muted {
+    color: @blue;
+}
+#pulseaudio.input.source-muted {
+    color: @blue;
+}
+
+#stats {
+    background-color: @background;
+    border: 2px solid @sapphire;
+    margin: 0 5px;
+    border-radius: 20px;
+}
+#memory {
+    padding: 6px 10px;
+    margin: 0 0 0 5px;
+}
+#cpu {
+    padding: 6px 10px;
+    margin: 0 5px 0 0;
+}
+
+#language {
+    background-color: @background;
+    border: 2px solid @sapphire;
+    border-radius: 20px;
+    margin: 0 5px;
+    padding: 6px 10px;
+}
+
+#battery {
+    background-color: @background;
+    padding: 6px 10px;
+    border: 2px solid @sapphire;
+    border-radius: 20px;
+    margin: 0 5px;
+}
+
+#backlight {
+    background-color: @background;
+    border: 2px solid @sapphire;
+    border-radius: 20px;
+    margin: 0 5px;
+    padding: 6px 10px;
+}
+
+#network {
+    background-color: @background;
+    border: 2px solid @sapphire;
+    border-radius: 20px;
+    margin: 0 5px;
+    padding: 6px 10px;
+}
+
+#tray {
+    background-color: @background;
+    border: 2px solid @sapphire;
+    border-radius: 20px;
+    margin: 0 5px;
+    padding: 6px 10px;
+}
+
+#custom-media {
+    color: @background;
+    background-color: @sapphire;
+    border-radius: 20px;
+    margin: 0 5px;
+    padding: 6px 14px;
+}
+
+#center {
+    background-color: @background;
+    border: 2px solid @sapphire;
+    border-radius: 20px;
+}
+
+#clock {
+    padding: 6px 10px;
+    margin: 0 5px;
+}
+#clock.simple {
+    background-color: @sapphire;
+    color: @background;
+    padding: 6px 10px;
+    border-radius: 20px;
+}
+
+#custom-weather {
+    padding: 6px 10px;
+    margin: 0 5px;
+}
+
+#image.logo {
+    background-color: @background;
+    border: 2px solid @sapphire;
+    border-radius: 20px;
+    padding: 6px 10px;
+    margin: 0 5px;
+}
+
+#workspaces {
+    background-color: @background;
+    border: 2px solid @sapphire;
+    border-radius: 20px;
+    margin: 0 5px;
+}
+#workspaces button.active {
+    background-color: @overlay3;
+    border-radius: 20px;
+}
+#workspaces button.urgent {
+    background-color: @red;
+    border-radius: 20px;
+}
+#workspaces button:hover {
+    background-color: @overlay1;
+    border-radius: 20px;
+}
+#workspaces button.empty {
+    padding: 6px 10px 6px 18px;
+
+}
+
+#window {
+    background-color: @background;
+    border: 2px solid @sapphire;
+    border-radius: 20px;
+    padding: 6px 10px;
+    margin: 0 5px;
+}

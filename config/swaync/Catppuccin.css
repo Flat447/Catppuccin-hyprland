@@ -1,0 +1,516 @@
+/* Fallback для старых CSS тем */
+/* Fallback для старых CSS тем */
+
+/*TODO: ОСНОВНЫЕ ЦВЕТА*/
+@define-color magenta #CBA6F7;
+@define-color blue #89B4FA;
+@define-color sapphire #70BCE0;
+@define-color yellow #F9E2AF;
+@define-color white #B8C0E0;
+@define-color white2 #A5ADCD;
+@define-color green #A6E3A1;
+@define-color red #F38BA8;
+@define-color orange #FAB387;
+/*TODO: ЦВЕТА НАЛОЖЕНИЯ*/
+@define-color overlay1 #3A3B49;
+@define-color overlay2 #262635;
+@define-color overlay3 #363746;
+/*TODO: ФОН И ПЕРЕДНИЙ ПЛАН*/
+@define-color foreground #DFE1E6;
+@define-color background #1E1E2E;
+@define-color background2 #181926;
+
+notificationwindow, blankwindow, blankwindow {
+  background: @background;
+}
+
+.close-button {
+  /* Кнопка закрытия уведомления */
+  background: @overlay1;
+  color: @sapphire;
+  text-shadow: none;
+  padding: 0;
+  border-radius: 20px;
+  margin-top: 8px;
+  margin-right: 8px;
+  box-shadow: none;
+  border: 2px solid @sapphire;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.notification-row {
+  background: none;
+  outline: none;
+}
+
+.notification-row:focus {
+  background: var(--noti-bg-focus);
+}
+
+.notification-row .notification-background {
+  padding: 6px 12px;
+}
+
+.notification-row .notification-background .notification {
+  /* Само уведомление */
+  border-radius: 20px;
+  transition: 0;
+  border: 2px solid @sapphire;
+  padding: 0;
+  background: @background;
+}
+
+.notification-row .notification-background .notification.low {
+  /* Уведомление низкого приоритета */
+}
+
+.notification-row .notification-background .notification.normal {
+  /* Уведомление обычного приоритета */
+}
+
+.notification-row .notification-background .notification.critical {
+  /* Уведомление критического приоритета */
+    border: 2px solid @red;
+    transition: 0;
+    border-radius: 20px;
+    padding: 0;
+    background: @background;
+}
+
+.notification-row .notification-background .notification .notification-default-action {
+  /* Основное действие, также отображающее заголовок и текст уведомления */
+  padding: 4px;
+  margin: 0;
+  box-shadow: none;
+  background: transparent;
+  border: none;
+  color: @foreground;
+  border-radius: 20px;
+}
+
+.notification-row .notification-background .notification .notification-default-action:not(:only-child) {
+  /* Когда видны альтернативные действия */
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content {
+  background: transparent;
+  border-radius: 20px;
+  padding: 0;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .image {
+  /* Основное изображение уведомления */
+  -gtk-icon-filter: none;
+  -gtk-icon-size: 64px;
+  border-radius: 100px;
+  /* Размер в px */
+  margin: 4px;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .app-icon {
+  /* Иконка приложения (видна только когда установлено основное изображение) */
+  -gtk-icon-filter: none;
+  -gtk-icon-size: 64px;
+  -gtk-icon-shadow: 0 1px 4px black;
+  margin: 6px;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .text-box label {
+  /* Исправление базового CSS GTK 4, который почему-то устанавливает фильтр непрозрачности 50% */
+  filter: none;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .text-box .summary {
+  /* Заголовок/тема уведомления */
+  font-size: 18px;
+  font-weight: bold;
+  background: transparent;
+  color: @foreground;
+  text-shadow: none;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .text-box .time {
+  /* Время с момента уведомления */
+  font-size: 18px;
+  font-weight: bold;
+  background: transparent;
+  color: @foreground;
+  text-shadow: none;
+  margin-right: 30px;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .text-box .body {
+  /* Текст уведомления */
+  font-size: 16px;
+  font-weight: medium;
+  background: transparent;
+  color: @foreground;
+  text-shadow: none;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content progressbar {
+  /* Дополнительная полоса прогресса уведомления */
+  margin-top: 4px;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .body-image {
+  /* Дополнительное нижнее изображение уведомления */
+  margin-top: 4px;
+  background-color: @white;
+  -gtk-icon-filter: none;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply {
+  /* Раздел встроенного ответа */
+  margin-top: 4px;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply .inline-reply-entry {
+  background: @background2;
+  color: @foreground;
+  caret-color: @foreground;
+  border: 2px solid @sapphire;
+  border-radius: 20px;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply .inline-reply-button {
+  margin-left: 4px;
+  background: @background;
+  border: 2px solid @sapphire;
+  border-radius: 20px;
+  color: @foreground;
+}
+
+.notification-row .notification-background .notification .notification-default-action .notification-content .inline-reply .inline-reply-button:disabled {
+  background: initial;
+  color: @white2;
+  border: 2px solid;
+  border-color: transparent;
+}
+
+
+.notification-row .notification-background .notification .notification-alt-actions {
+  background: none;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  padding: 4px;
+}
+
+.notification-row .notification-background .notification .notification-action {
+  /* Альтернативные действия под основным действием */
+  margin: 4px;
+  padding: 0;
+}
+
+.notification-row .notification-background .notification .notification-action > button {
+  border-radius: 20px;
+  color: @foreground;
+}
+
+.notification-group {
+  /* Стили только для сгруппированных уведомлений */
+  /* Кнопка закрытия группы */
+}
+
+.notification-group.low {
+  /* Группа низкого приоритета */
+}
+
+.notification-group.normal {
+  /* Группа обычного приоритета */
+}
+
+.notification-group.critical {
+  /* Группа критического приоритета */
+}
+
+.notification-group .notification-group-close-button .close-button {
+  margin: 12px 20px;
+}
+
+.notification-group .notification-group-buttons, .notification-group .notification-group-headers {
+  margin: 0 16px;
+  color: @foreground;
+}
+
+.notification-group .notification-group-headers {
+  /* Заголовки группы уведомлений */
+}
+
+.notification-group .notification-group-headers .notification-group-icon {
+  color: @foreground;
+  -gtk-icon-size: 64px;
+}
+
+.notification-group .notification-group-headers .notification-group-header {
+  color: @foreground;
+}
+
+.notification-group .notification-group-buttons {
+  /* Кнопки группы уведомлений */
+}
+
+.notification-group.collapsed {
+  /* Когда другая группа развернута, уменьшить непрозрачность свернутых */
+}
+
+.notification-group.collapsed.not-expanded {
+  opacity: 0.4;
+}
+
+.notification-group.collapsed .notification-row .notification {
+  background-color: @overlay2;
+}
+
+.notification-group.collapsed .notification-row:not(:last-child) {
+  /* Верхнее уведомление в стеке */
+  /* Установить непрозрачность нижних уведомлений в стеке на 0 */
+}
+
+.notification-group.collapsed .notification-row:not(:last-child) .notification-action,
+.notification-group.collapsed .notification-row:not(:last-child) .notification-default-action {
+  opacity: 0;
+}
+
+
+.control-center {
+  /* Центр управления, содержащий старые уведомления и виджеты */
+  background: rgba(@background, 0.7);
+  color: @foreground;
+  border-radius: 20px;
+}
+
+.control-center .control-center-list-placeholder {
+  /* Заполнитель, когда уведомлений нет */
+  opacity: 0.5;
+}
+
+.control-center .control-center-list {
+  /* Список уведомлений */
+  background: transparent;
+}
+
+.control-center .control-center-list .notification {
+  box-shadow: var(--notification-shadow);
+}
+
+.control-center .control-center-list .notification .notification-default-action,
+.control-center .control-center-list .notification .notification-action {
+  transition: var(--group-collapse-tranistion), var(--hover-tranistion);
+}
+
+.blank-window {
+  /* Окно позади центра управления и на всех остальных мониторах */
+  background: transparent;
+}
+
+.floating-notifications {
+  background: transparent;
+}
+
+.floating-notifications .notification {
+  box-shadow: none;
+}
+
+/*** Виджеты ***/
+.widget {
+  margin: 8px;
+  padding: 8px;
+  border-radius: 20px;
+}
+
+/* Виджет заголовка */
+.widget-title > label {
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+.widget-title > button {
+  margin-left: 8px;
+  border-radius: 20px;
+}
+
+/* Виджет "Не беспокоить" */
+.widget-dnd label {
+  color: @foreground;
+  margin-right: 8px;
+  font-size: 1.1rem;
+}
+
+.widget-dnd switch {
+  border-radius: 20px;
+  margin-left: 8px;
+}
+
+.widget-dnd switch slider {
+  border-radius: 20px;
+}
+
+/* Виджет метки */
+.widget-label > label {
+  font-size: 1.1rem;
+}
+
+/* Виджет Mpris */
+:root {
+  --mpris-album-art-overlay: rgba(0, 0, 0, 0.55);
+  --mpris-button-hover: rgba(0, 0, 0, 0.5);
+  --mpris-album-art-icon-size: 96px;
+  --mpris-album-art-shadow: 0px 0px 10px rgba(0, 0, 0, 0.75);
+}
+
+.widget-mpris {
+  padding: 0;
+  /* Родительский контейнер для всех плееров */
+}
+
+.widget-mpris .widget-mpris-player {
+  margin: 16px 20px;
+  border-radius: 20px;
+  box-shadow: var(--mpris-album-art-shadow);
+}
+
+.widget-mpris .widget-mpris-player .mpris-background {
+  filter: blur(10px);
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay {
+  padding: 16px;
+  background-color: var(--mpris-album-art-overlay);
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay button:hover {
+  /* Кнопки медиаплеера (воспроизведение, пауза, след. и т.д.) */
+  background: var(--noti-bg-hover);
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-album-art {
+  border-radius: 20px;
+  box-shadow: var(--mpris-album-art-shadow);
+  -gtk-icon-size: var(--mpris-album-art-icon-size);
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-title {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay .widget-mpris-subtitle {
+  font-size: 1.1rem;
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay > box > button {
+  /* Изменение кнопок управления плеером */
+}
+
+.widget-mpris .widget-mpris-player .mpris-overlay > box > button:hover {
+  background-color: var(--mpris-button-hover);
+}
+
+.widget-mpris > box > button {
+  /* Изменение боковых кнопок плеера */
+}
+
+.widget-mpris > box > button:disabled {
+  /* Изменение неактивных боковых кнопок плеера */
+}
+
+/* Виджет кнопок */
+.widget-buttons-grid flowboxchild > button {
+  border-radius: 20px;
+}
+
+.widget-buttons-grid flowboxchild > button.toggle:checked {
+  /* стиль для активной переключаемой кнопки */
+}
+
+/* Виджет строки меню */
+.widget-menubar {
+  /* Кнопки раскрытия */
+  /* .ЛюбоеИмя { Имя, заданное в конфиге после #
+    background-color: rgba(var(--noti-bg), 1.0);
+    padding: 8px;
+    margin: 8px;
+    border-radius: 12px;
+  }
+
+  .ЛюбоеИмя>button {
+    background: transparent;
+    border: none;
+  }
+
+  .ЛюбоеИмя>button:hover {
+    background-color: var(--noti-bg-hover);
+  } */
+}
+
+.widget-menubar > .menu-button-bar {
+  /* Левый контейнер кнопок */
+  /* Правый контейнер кнопок */
+  /* Левый и правый контейнеры кнопок */
+}
+
+.widget-menubar > .menu-button-bar > .start {
+  margin-left: 8px;
+}
+
+.widget-menubar > .menu-button-bar > .end {
+  margin-right: 8px;
+}
+
+.widget-menubar > .menu-button-bar > .widget-menubar-container button {
+  border-radius: 20px;
+  margin: 0 4px;
+}
+
+.widget-menubar > revealer * {
+  margin-top: 8px;
+}
+
+.widget-menubar > revealer * button {
+  border-radius: 20px;
+  margin: 8px;
+  margin-top: 0;
+}
+
+.widget-menubar > revealer * button:last-child {
+  margin-bottom: 0;
+}
+
+/* Виджет громкости */
+:root {
+  --widget-volume-row-icon-size: 24px;
+}
+
+/* Иконка приложения в каждой строке */
+.widget-volume row image {
+  -gtk-icon-size: var(--widget-volume-row-icon-size);
+}
+
+.per-app-volume {
+  background-color: var(--noti-bg-alt);
+  margin: 8px;
+  margin-bottom: 0;
+  border-radius: 20px;
+}
+
+/* Виджет ползунка */
+.widget-slider label {
+  font-size: inherit;
+  background-color: @sapphire;
+}
+
+/* Виджет подсветки */
+/* Виджет ингибиторов */
+.widget-inhibitors > label {
+  margin-right: 8px;
+  font-size: 1.5rem;
+}
+
+.widget-inhibitors > button {
+  margin-left: 8px;
+  border-radius: 20px;
+}

@@ -1,0 +1,201 @@
+* {
+    font-family: "JetBrains Mono", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 0px;
+}
+/*ЦВЕТА*/
+@define-color background #f6f5f4;
+@define-color foreground #2e3436;
+@define-color foreground-dark #5e5e5e;
+@define-color foreground-disabled #9a9a9a;
+
+@define-color accent-primary #2D7BDA;
+@define-color accent-hover #1a6bc7;
+@define-color accent-active #0d5bb3;
+
+@define-color bg-primary #f6f5f4;
+@define-color bg-secondary #ffffff;
+@define-color bg-tertiary #ebebeb;
+@define-color bg-elevated #ffffff;
+
+@define-color border-primary #cdc7c2;
+@define-color border-secondary #e6e1dc;
+@define-color border-focused #2D7BDA;
+
+@define-color text-on-accent #ffffff;
+
+@define-color warning #f67400;
+@define-color error #da4453;
+@define-color success #37b349;
+
+@define-color button-bg #ffffff;
+@define-color button-border #cdc7c2;
+@define-color button-primary-bg #2D7BDA;
+
+@define-color input-bg #ffffff;
+@define-color input-border #cdc7c2;
+@define-color input-placeholder #9a9a9a;
+
+@define-color shadow-light rgba(0, 0, 0, 0.08);
+@define-color shadow-medium rgba(0, 0, 0, 0.12);
+
+/*МОДУЛИ*/
+window#waybar {
+    background-color: @background;
+    color: @accent-primary;
+    border-radius: 16px;
+}
+/*КНОПКА*/
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+button:hover {
+    background: inherit;
+}
+/*ПРОЦ*/
+#cpu {
+    color: @accent-primary;
+    background-color: @border-secondary;
+    padding: 2px 10px;
+    margin: 2px 0 2px 2px;
+    border-radius: 16px 0 0 16px;
+}
+/*ВЛАГАУТ*/
+#custom-exit {
+    color: @accent-primary;
+    background-color: @border-secondary;
+    padding: 2px 10px;
+    margin: 2px 2px;
+    border-radius: 16px;
+}
+/*ПАМЯТЬ*/
+#memory {
+    color: @border-secondary;
+    background-color: @accent-primary;
+    padding: 2px 10px;
+    margin: 2px 2px 2px 0;
+    border-radius: 0 16px 16px 0;
+}
+/*ЭМОДЖИ МЕНЮ*/
+#custom-emoji_menu {
+    color: @accent-primary;
+    background-color: @border-secondary;
+    padding: 2px 10px;
+    margin: 2px 2px;
+    border-radius: 16px;
+}
+/*МЕНЮ ПРИЛОЖЕНИЙ*/
+#custom-menu {
+    background-color: @accent-primary;
+    padding: 2px 16px 2px 10px;
+    border-radius: 16px;
+    margin: 2px 2px;
+    color: @bg-primary;
+}
+/*АКТИВНОЕ ОКНО*/
+#window {
+    color: @accent-primary;
+    padding: 2px 10px;
+    margin: 2px 2px;
+    border-radius: 16px;
+    background-color: @border-secondary;
+}
+#window:hover {
+    color: @border-secondary;
+    background-color: @accent-primary;
+}
+/*ВОРКСПЕЙСЫ*/
+#workspaces {
+    background-color: @border-primary;
+    border-radius: 16px;
+    margin: 2px 2px;
+}
+#workspaces button {
+    color: @accent-primary;
+    background-color: @border-primary;
+    border-radius: 16px;
+}
+#workspaces button:hover {
+    border-radius: 16px;
+}
+#workspaces button.active {
+    color: @bg-primary;
+    background-color: @accent-primary;
+    padding: 2px 10px;
+    margin: 2px 2px;
+    border-radius: 16px;
+}
+#workspaces button.urgent {
+    color: @error;
+    border-radius: 16px;
+}
+#workspaces button.empty {
+    color: @foreground-disabled;
+}
+/*ЧАСЫ*/
+#clock {
+    color: @accent-primary;
+    background-color: @border-secondary;
+    padding: 2px 10px;
+    margin: 2px 2px;
+    border-radius: 16px;
+}
+/*СИСТЕМНЫЙ ТРЕЙ*/
+#tray {
+    color: @accent-primary;
+    background-color: @border-secondary;
+    padding: 2px 10px;
+    margin: 2px 2px;
+    border-radius: 16px;
+}
+/*БАТАРЕЙКА*/
+#battery {
+    color: @accent-primary;
+    background-color: @border-secondary;
+    padding: 2px 10px;
+    margin: 2px 2px;
+    border-radius: 16px;
+}
+#battery.charging {
+    color: @accent-active;
+}
+#battery.critical:not(.charging) {
+    color: @error;
+    background-color: @foreground-dark;
+}
+/*ЛАНГУАГЕ*/
+#language {
+    background-color: @accent-primary;
+    color: @border-secondary;
+    padding: 2px 10px;
+    margin: 2px 2px;
+    border-radius: 16px;
+    text-decoration: underline @accent-primary;
+}
+/*ПУЛЬСА*/
+#pulseaudio.output {
+    background-color: @border-secondary;
+    padding: 2px 10px;
+    margin: 2px 0 2px 2px;
+    border-radius: 16px 0 0 16px;
+}
+#pulseaudio.input {
+    background-color: @border-secondary;
+    padding: 2px 10px;
+    margin: 2px 2px 2px 0;
+    border-radius: 0 16px 16px 0;
+}
+/*МОДУЛЬ МЕДИА*/
+#custom-media {
+    background-color: @border-primary;
+    padding: 2px 10px;
+    margin: 2px 2px;
+    border-radius: 16px;
+}
+#custom-media:hover {
+    color: @border-secondary;
+    background-color: @accent-primary;
+}

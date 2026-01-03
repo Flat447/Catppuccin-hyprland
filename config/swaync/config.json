@@ -1,0 +1,38 @@
+{
+  "positionX": "right",
+  "positionY": "top",
+  "control-center-margin-top": 0,
+  "control-center-margin-bottom": 0,
+  "control-center-margin-left": 0,
+  "control-center-margin-right": 0,
+  "control-center-width": 500,
+  "control-center-height": 600,
+  "notification-window-width": 500,
+  "keyboard-shortcuts": true,
+  "image-visibility": "always",
+  "transition-time": 200,
+  "hide-on-clear": false,
+  "hide-on-action": true,
+  "script-fail-notify": true,
+  "notification-visibility": {},
+  "widgets": [
+    "title",
+    "dnd",
+    "mpris",
+    "notifications"
+  ],
+  "widget-config": {
+    "mpris": {
+      "image-size": 86,
+      "image-radius": 8,
+      "max-title-length": 25,
+      "max-artist-length": 0,
+      "truncate-text": true,
+      "pause-on-click": true,
+      "buttons": ["previous", "play-pause", "next"],
+      "format": "{title}",
+      "format-paused": "⏸ {title}",
+      "format-stopped": "No music"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+   "logo": {
+     "color": {"1": "36"},
+     "type": "file",
+     "source": "~/.config/fastfetch/cachyos_mini_logo.txt"
+   },
+    "display": {
+        "separator": " ",
+    },
+   "modules": [
+     {
+         "key": "╭────────────────────────────────────────╮",
+         "type": "custom",
+         "keyColor": "white"
+     },
+     {
+       "type": "os",
+       "key": "{#36}      =>   ",
+       "keyColor": "black",
+     },
+     {
+       "type": "kernel",
+       "key": "{#36}      =>   ",
+       "keyColor": "black",
+     },
+     {
+       "type": "shell",
+       "key": "{#36}      =>   ",
+       "keyColor": "black",
+     },
+     {
+       "type": "wm",
+       "key": "{#36}      =>   ",
+       "keyColor": "black",
+     },
+     {
+       "type": "terminal",
+       "key": "{#36}      =>   ",
+       "keyColor": "black",
+     },
+     {
+       "type": "uptime",
+       "key": "{#36}    󰪢  =>   ",
+       "keyColor": "black",
+     },
+     {
+         "type": "custom",
+         "key": "╰─────────────────────── {#30}{#black} {#37}{#black} {#36}{#black} {#35}{#black} {#34}{#black} {#33}{#black} {#32}{#black} {#31}{#white} ╯",
+         "keyColor": "white"
+     }
+   ]
+}

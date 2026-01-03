@@ -1,0 +1,438 @@
+//  __  __           _       _            
+// |  \/  | ___   __| |_   _| | ___  ___  
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __| 
+// | |  | | (_) | (_| | |_| | |  __/\__ \ 
+// |_|  |_|\___/ \__,_|\__,_|_|\___||___/ 
+//                                        
+//  
+// by Stephan Raabe (2023) 
+// ----------------------------------------------------- 
+//
+{
+    "custom/swaync": {
+      "tooltip": false,
+      "format": "Notificatios: {}",
+      "interval": 1,
+      "exec": "swaync-client -c",
+      "on-click": "swaync-client -op"
+    },
+    "custom/weather": {
+    "format": "{}",
+    "tooltip": true,
+    "interval": 30,
+    "exec": "/home/flat/.local/share/python/waybar-wttr.py",
+    "return-type": "json"
+    },
+   	"custom/foot": {
+	"format": "",
+	"on-click": "exec foot --title=home -c ~/.config/hypr/themes/hypr_strws/foot.ini",
+	"tooltip": false
+	},
+
+	"custom/nemo": {
+	"format": "󰉋",
+    "on-click": "exec nemo /home/",
+	"tooltip": false
+	},
+
+    // Workspaces
+   "hyprland/workspaces": {
+    "format": "{icon} {windows}",
+    "active-only": false,
+    "all-outputs": true,
+    "workspace-taskbar": {
+        "enable": true,
+        "format": "{icon}",
+        "icon-size": 18,
+        "on-click-window": "~/.config/waybar/scripts/focus-window.sh {address} {button}"
+    },
+    "persistent-workspaces": {
+    // START WORKSPACES
+    "*": 5
+    // END WORKSPACES
+    }       
+
+},
+ "wlr/taskbar": {
+        "format": "{icon}",
+        "format-empty": " ",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+           "Alacritty"
+        ],
+        "app_ids-mapping": {
+            "firefoxdeveloperedition": "firefox-developer-edition"
+        },
+        "rewrite": {
+            "Firefox Web Browser": "Firefox",
+            "Foot Server": "Terminal"
+        }
+    },
+    // Hyprland Window
+    "hyprland/window": {
+        "rewrite": {
+            "(.*) - Brave": "$1",
+            "(.*) - Chromium": "$1",
+            "(.*) - Brave Search": "$1",
+            "(.*) - Outlook": "$1",
+            "(.*) Microsoft Teams": "$1"
+        },
+        "separate-outputs": true
+    },
+    "custom/cmus": {
+        "format": "{}",
+        "exec": "~/.config/waybar/scripts/cmus-status.sh",
+        "interval": 1,
+   		"on-click": "cmus-remote -u",
+		"on-scroll-up": "cmus-remote --next",
+		"on-scroll-down": "cmus-remote --prev",
+		"escape": true,
+		"tooltip": false
+    },
+    "cava": {
+        // "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
+        "framerate": 30,
+        "autosens": 1,
+        "sensitivity": 100,
+        "bars": 5,
+        "lower_cutoff_freq": 300,
+        "higher_cutoff_freq": 20000,
+        "hide_on_silence": false,
+        // "format_silent": "quiet",
+        "method": "pulse",
+        "source": "auto",
+        "stereo": true,
+        "reverse": false,
+        "bar_delimiter": 0,
+        "monstercat": false,
+        "waves": false,
+        "noise_reduction": 0.77,
+        "input_delay": 2,
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+                   "on-click-right": "mode"
+                   }
+    },
+       // Empty
+    "custom/empty": {
+        "format": ""
+    },
+    "custom/cliphist": {
+        "format": "{icon}",
+        "format-icons": "",
+        "tooltip": false,
+        "on-click": "cliphist list | wofi --dmenu --width=1000 --location=3 --xoffset=-15 --yoffset=5 | cliphist decode | wl-copy"
+    },
+    // Filemanager Launcher
+    "custom/filemanager": {
+        "format": "",
+        "on-click": "nautilus",
+        "tooltip": false
+    },
+
+    // Calculator
+    "custom/calculator": {
+        "format": " 🖩 ",
+        "on-click": "qalculate-gtk",
+        "tooltip": false
+    },
+
+    // Wofi Application Launcher
+    "custom/appmenu": {
+        // START APPS LABEL
+        "format": "{icon}",
+        "format-icons": "",
+        // END APPS LABEL
+        "on-click": "sleep 0.2;wofi --show drun --location=1 --xoffset=5 --yoffset=5",
+        "tooltip": false
+    },
+
+    // Wofi Application Launcher
+    "custom/appmenuicon": {
+        "format": "󰣇 ",
+        "on-click": "rofi -show drun ",
+        "tooltip": false
+    },    
+
+    // Power Menu
+    "custom/exit": {
+        "format":"⏻",
+        "on-click": "wlogout",
+        "tooltip": false
+    },
+    "custom/kitty": {
+        "format": "{icon}",
+        "format-icons": "",
+        "tooltip": false,
+        "on-click": "exec kitty --title sosihui"
+    },
+    // Keyboard State
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+
+    // System tray
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+
+    // Clock
+  "group/time": {
+    "modules": ["clock", "clock#simple"],
+    "orientation": "horizontal",
+  },
+  "clock#simple": {
+    "format": "{:%H:%M}",
+    "tooltip": false,
+    "on-click-middle": "killall calcurse",
+    "on-click-right": "kitty --title calendar --hold calcurse",
+    "format-alt": "{:%d-%m-%Y}",
+    "interval": 0.5,
+  },
+  "clock": {
+    "format": "{:L%a %d, %b %Y}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%d-%m-%Y}",
+  },
+
+    // System
+    "custom/system": {
+        "format": "",
+        "tooltip": false
+    },
+    "custom/poweroff": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "~/.config/wofi/scripts/powermenu.sh"
+    },
+    "custom/reboot": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "systemctl reboot"
+    },
+    "custom/lock": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "hyprlock"
+    },
+    "custom/logout": {
+      "format": "",
+      "tooltip": false,
+      "on-click": "hyprctl dispatch exit"
+    },
+        // CPU
+    "cpu": {
+        "format": "/ C {usage}% ",
+        "on-click": "alacritty -e htop"
+    },
+    "group/power": {
+    "orientation": "horizontal",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "not-power",
+        "transition-left-to-right": false
+    },
+    "modules": [
+      "custom/poweroff",
+      "custom/logout",
+      "custom/lock",
+      "custom/reboot"
+    ]
+    },
+    // Memory
+    "memory": {
+        "format": "/ M {}% ",
+        "on-click": "alacritty -e htop"
+    },
+
+    // Harddisc space used
+    "disk": {
+        "interval": 30,
+        "format": "D {percentage_used}% ",
+        "path": "/",
+        "on-click": "alacritty -e htop"
+    }, 
+
+    "hyprland/language": {
+        "format": "{}",
+        "format-en": "EN",
+        "format-ru": "РУ",
+		"on-click": "hyprctl switchxkblayout all next"
+    },
+    "custom/mpv_music": {
+        "format": "{icon}",
+        "format-icons": "",
+        "on-click": "exec mpv --title=music ~/Music/",
+        "tooltip": false
+    },
+   	"custom/media": {
+    	"format": "{icon} {0}",
+		"return-type": "json",
+		"format-icons": {
+			"Playing": "",
+			"Paused": ""
+		},
+		"max-length": 50,
+		"exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+		"on-click": "playerctl play-pause",
+		"on-scroll-up": "playerctl next",
+		"on-scroll-down": "playerctl previous",
+		"tooltip": false
+	},
+
+    "image#appmenu": {
+        "path": "/home/flat/.config/waybar/hypr_logo.svg",
+        "size": 24,
+        "on-click": "sleep 0.2;wofi --show drun --location=1 --xoffset=5 --yoffset=5",
+        "tooltip": false
+    },
+    "image#wall": {
+        "path": "/home/flat/.config/waybar/wall_logo.svg",
+        "size": 32,
+        "tooltip": false,
+        "on-click": "~/.config/waybar/scripts/wallpaper_random.sh",
+        "on-click-right": "exec gswww"
+    },
+    "custom/emoji_menu": {
+        "format": "{icon}",
+        "format-icons": "☺︎",
+        "tooltip": false,
+        "on-click": "~/.config/wofi/scripts/emoji-script.sh"
+    },
+    // Group Hardware
+    "group/hardware": {
+        "orientation": "inherit",
+        "drawer": {
+            "transition-duration": 300,
+            "children-class": "not-memory",
+            "transition-left-to-right": false
+        },        
+        "modules": [
+            "custom/system",
+            "disk",
+            "cpu",
+            "memory",
+            "hyprland/language"
+        ]
+    },
+    "group/lefter": {
+      "orientation": "horizontal",
+      "modules": [
+        "image#appmenu",
+        "tray",
+        "hyprland/language"
+      ]
+    },
+    // Group Settings
+    "group/settings": {
+        "orientation": "horizontal",
+        "modules": [
+            "custom/settings",
+        ]
+    },
+
+    // Group Quicklinks
+    "group/quicklinks": {
+        "orientation": "horizontal",
+    },
+
+    // Network
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": " {signalStrength}%",
+        "format-ethernet": " {ifname}",
+        "format-disconnected": "Отключено",
+        "tooltip-format": " {ifname} via {gwaddri}",
+        "tooltip-format-wifi": " {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+        "tooltip-format-disconnected": "Отключено",
+        "max-length": 50,
+        "on-click": "nm-connection-editor"
+    },
+
+    // Battery
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}{capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon}{time}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": [" ", " ", " ", " ", " "]
+    },
+    "custom/cpupower": {
+        "format": "CPUpower",
+        "tooltip": false,
+        "on-click": "exec ~/.config/rofi/scripts/cpumenu.sh"
+    },
+    // Pulseaudio
+  "group/zvuk": {
+    "orientation": "horizontal",
+    "modules": ["pulseaudio#output", "pulseaudio#input"],
+  },
+  "pulseaudio#output": {
+    "format": "<span color=\"#4C3743\">{icon}</span>  {volume}%",
+    "format-muted": " ",
+    "format-icons": {
+      "headphone": "",
+      "default": ["", "", ""],
+    },
+    "on-click-right": "pavucontrol",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+  },
+  "pulseaudio#input": {
+    "format": "{format_source}",
+    "format-source": "<span color=\"#4C3743\"></span> {volume}%",
+    "format-source-muted": " ",
+    "tooltip-format": "Micr",
+    "on-click-right": "pavucontrol",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+    "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
+    "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
+  },
+
+    // Bluetooth
+    "bluetooth": {
+        "format": "  on ",
+        "format-disabled": "  off ",
+        "format-off": "  off ",
+        "interval": 30,
+        "on-click": "blueman-manager",
+        "format-no-controller": ""
+    },
+
+    // Other
+    "user": {
+        "format": "{user}",
+        "interval": 60,
+        "icon": false,
+    },
+
+    // Idle Inhibator
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "tooltip": true,
+        "format-icons":{
+            "activated": "",
+            "deactivated": ""
+        },
+        "on-click-right": "hyprlock"        
+    }
+}
+
+

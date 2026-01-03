@@ -1,0 +1,36 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+   "logo": {
+     "color": {"1": "#FF9E3B"},
+     "type": "file",
+     "source": "~/.config/fastfetch/arch_logo.txt"
+  }, 
+  "modules": [
+    {
+      "type": "os",
+      "key": " ",
+      "keyColor": "#FF9E3B",
+      "format": "{name}"
+    },
+    {
+      "type": "kernel",
+      "key": " ",
+      "keyColor": "#FF9E3B"
+    },
+    {
+       "type": "shell",
+       "key": " ",
+       "keyColor": "#FF9E3B"
+    },
+    "de",
+    {
+      "type": "wm",
+      "key": " ",
+      "keyColor": "#FF9E3B"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m "
+    }
+  ]
+}

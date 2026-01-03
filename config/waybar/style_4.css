@@ -1,0 +1,122 @@
+@define-color magenta #B16286;
+@define-color blue #458588;
+@define-color yellow #D79921;
+@define-color white #A89984;
+@define-color green #98971A;
+@define-color white2 #EBDBB2;
+@define-color overlay3 #928374;
+@define-color foreground #DB8958;
+@define-color overlay1 #3C3D36;
+@define-color overlay2 #1D2021;
+@define-color background #282828;
+@define-color urgent #CC241D;
+
+* {
+    font-family: "JetBrains Mono Medium", FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    color: @foreground;
+    background-color: @background;
+}
+
+button {
+    /* Use box-shadow instead of border so the text isn't offset */
+    box-shadow: inset 0 -3px transparent;
+    /* Avoid rounded borders under each button name */
+    border: none;
+    border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+    background: inherit;
+}
+
+#tray {
+    background-color: @overlay1;
+    padding: 0 10px;
+    margin: 0 0 0 2px;
+}
+
+#workspaces {
+    background-color: @overlay1;
+}
+#workspaces button {
+    color: @white2;
+}
+#workspaces button.active {
+    color: @foreground;
+    background-color: @overlay2;
+}
+#workspaces button.empty {
+    color: @overlay3;
+}
+#workspaces button.urgent {
+    color: @urgent;
+}
+
+#backlight {
+    background-color: @overlay1;
+    padding: 0 10px;
+    color: @white;
+    margin: 0 4px 0 0;
+}
+
+#custom-media {
+    color: @overlay1;
+    background-color: @foreground;
+    padding: 0 10px;
+    margin: 0 4px 0 4px;
+}
+
+#keyboard-state {
+    background-color: @overlay1;
+    padding: 0 10px;
+    margin: 0 0 0 4px;
+}
+
+#pulseaudio {
+    background-color: @overlay1;
+}
+#pulseaudio.output {
+    padding: 0 5px 0 10px;
+}
+#pulseaudio.input {
+    padding: 0 10px 0 5px;
+}
+#pulseaudio.output.muted {
+  color: @green;
+}
+#pulseaudio.input.source-muted {
+  color: @green;
+}
+
+#language {
+    color: @overlay1;
+    background-color: @yellow;
+    padding: 0 10px;
+    margin: 0 2px 0 4px;
+    text-decoration: underline @yellow;
+}
+
+#battery {
+    color: @blue;
+    background-color: @overlay1;
+    padding: 0 10px;
+    margin: 0 2px;
+}
+
+#clock {
+    color: @magenta;
+    background-color: @overlay1;
+    padding: 0 10px;
+}
+
+#clock.simple {
+    color: @overlay1;
+    background-color: @magenta;
+    padding: 0 10px;
+}

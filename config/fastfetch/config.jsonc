@@ -1,0 +1,78 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+   "logo": {
+     "color": {"1": "36"},
+     "type": "file",
+     "source": "~/.config/fastfetch/logo.txt"
+  }, 
+  "display": {
+      "separator": " "
+  },
+  "modules": [
+    "break",
+    {
+        "type": "custom",
+        "format": "╭────────────────────────────────────────╮"
+    },
+    {
+      "type": "os",
+      "key": "{#36}      =>  ",
+      "keyColor": "black"
+    },
+    {
+      "type": "kernel",
+      "key": "{#36}      =>  ",
+      "keyColor": "black"
+    },
+    {
+       "type": "shell",
+       "key": "{#36}      =>  ",
+       "keyColor": "black"
+    },
+    {
+      "type": "wm",
+      "key": "{#36}      =>  ",
+      "keyColor": "black"
+    },
+    {
+       "type": "uptime",
+       "key": "{#36}      =>  ",
+       "keyColor": "black"
+    },
+    {
+        "type": "cursor",
+        "key": "{#36}      =>  ",
+        "keyColor": "black"
+    },
+    {
+        "type": "terminal",
+        "key": "{#36}      =>  ",
+        "keyColor": "black"
+    },
+    {
+        "type": "terminalfont",
+        "key": "{#36}      =>  ",
+        "keyColor": "black" 
+    },
+    {
+        "type": "datetime",
+        "format": "{1}-{3}-{11}",
+        "key": "{#36}      =>  ",
+        "keyColor": "black"
+    },
+    {
+      "type": "memory",
+      "key": "{#36}      =>  ",
+      "keyColor": "black"
+    },
+    {
+      "type": "battery",
+      "key": "{#36}      =>  ",
+      "keyColor": "black"
+    },
+    {
+      "type": "custom",
+      "format": "╰─────────────── {#30} {#black} {#37} {#black} {#36} {#black} {#35} {#black} {#34} {#black} {#33} {#black} {#32} {#black} {#31} {#white} ╯"
+    }
+  ]
+}

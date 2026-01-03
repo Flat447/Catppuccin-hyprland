@@ -1,0 +1,185 @@
+/* Catppuccin Macchiato Colors */
+@define-color base   #24273a;
+@define-color mantle #1e2030;
+@define-color crust  #181926;
+
+@define-color text     #cad3f5;
+@define-color subtext0 #a5adcb;
+@define-color subtext1 #b8c0e0;
+
+@define-color surface0 #363a4f;
+@define-color surface1 #494d64;
+@define-color surface2 #5b6078;
+
+@define-color overlay0 #6e738d;
+@define-color overlay1 #8087a2;
+@define-color overlay2 #939ab7;
+
+@define-color blue      #8aadf4;
+@define-color lavender  #b7bdf8;
+@define-color sapphire  #7dc4e4;
+@define-color sky       #91d7e3;
+@define-color teal      #8bd5ca;
+@define-color green     #a6da95;
+@define-color yellow    #eed49f;
+@define-color peach     #f5a97f;
+@define-color maroon    #ee99a0;
+@define-color red       #ed8796;
+@define-color mauve     #c6a0f6;
+@define-color pink      #f5bde6;
+@define-color flamingo  #f0c6c6;
+@define-color rosewater #f4dbd6;
+
+* {
+    font-family: "Noto Sans";
+    font-size: 10pt;
+    transition: 0.2s ease-in-out;
+}
+
+.control-center {
+  background: @base;
+  border: none;
+  border-radius: 20px;
+  color: @text;
+  padding: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.5);
+}
+
+.floating-notifications.background .notification-row .notification-background {
+  background: @surface0;
+  border: 2px solid @sapphire;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  margin: 6px;
+  color: @text;
+}
+
+.floating-notifications.background .notification-row {
+    background: transparent;
+}
+
+.notification-content {
+  background: transparent;
+  padding: 8px;
+}
+
+.summary {
+  font-weight: bold;
+  color: @text;
+  font-size: 11pt;
+}
+
+.body {
+  color: @subtext0;
+}
+
+.time {
+  color: @overlay0;
+  font-size: 9pt;
+}
+
+progress, progressbar, trough {
+  border-radius: 20px;
+  min-height: 6px;
+}
+
+trough {
+  background: @surface1;
+}
+
+.notification.critical progress { 
+    background: @red;
+}
+.notification.low progress, .notification.normal progress { 
+    background: @green; 
+}
+
+.notification.critical {
+    border-color: @red; 
+}
+
+.notification-action {
+  color: @text;
+  background: @surface2;
+  border: none;
+  border-radius: 16px;
+  padding: 4px 8px;
+  margin-top: 6px;
+}
+
+.notification-action:hover {
+  background: @sapphire;
+  color: @base;
+}
+
+.close-button {
+  background: transparent;
+  color: @red;
+  border-radius: 100%;
+  margin: 0;
+  padding: 4px;
+  border: none;
+  text-shadow: none;
+  box-shadow: none;
+}
+
+.close-button:hover {
+  background: @surface2;
+  color: @red;
+}
+
+.widget-title, .widget-dnd, .widget-mpris {
+  background: @surface0;
+  border-radius: 20px;
+  padding: 8px;
+  margin: 8px 4px;
+  border: 2px solid @surface1;
+}
+
+.widget-title > button {
+  background: @surface1;
+  border: none;
+  color: @text;
+  border-radius: 16px;
+  padding: 4px 12px;
+}
+
+.widget-title > button:hover {
+  background: @sapphire;
+  color: @base;
+}
+
+.widget-mpris .widget-mpris-player {
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+.widget-mpris .widget-mpris-player > box > button {
+  border-radius: 100%;
+  background: @surface1;
+  color: @text;
+  margin: 0 4px;
+  padding: 6px;
+  border: none;
+}
+
+.widget-mpris .widget-mpris-player > box > button:hover {
+  background: @sapphire;
+  color: @base;
+}
+
+.widget-dnd > switch {
+  background: @surface1;
+  border-radius: 20px;
+  border: none;
+}
+
+.widget-dnd > switch:checked {
+  background: @sapphire;
+}
+
+.widget-dnd > switch slider {
+  background: @surface2;
+  border-radius: 100%;
+}

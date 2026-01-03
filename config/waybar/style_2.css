@@ -1,0 +1,133 @@
+* {
+    font-family: JetBrainsMonoNL, Symbols Nerd Font;
+    font-weight: bold;
+    font-size: 13px;
+    min-height: 0;
+}
+/*==================COLORS================*/
+@define-color background #16161D;
+@define-color foreground #DCD7BA;
+@define-color foreground-dark #C8C093;
+@define-color power #DCA561;
+@define-color red #C34043;
+@define-color orange #FF9E3B;
+@define-color overlay #2A2A37;
+@define-color overlay2 #363646;
+/*=================MODULES====================*/
+window#waybar {
+    background-color: #1F1F28;
+    color: #ffffff;
+    transition-property: background-color;
+    transition-duration: .5s;
+    border-radius: 5px;
+}
+button {
+    box-shadow: inset 0 -3px transparent;
+    border: none;
+    border-radius: 0;
+}
+button:hover {
+    background: inherit;
+    box-shadow: inset 0 -3px @foreground-dark;
+}
+#workspaces {
+    background-color: @background;
+    border-radius: 5px;
+    margin: 2px 2px;
+}
+#custom-emoji_menu {
+    color: @orange;
+    background-color: @background;
+    padding: 0 10px;
+    margin: 2px 2px;
+    border-radius: 5px;
+}
+#workspaces button {
+    padding: 0 10px;
+    color: @foreground-dark;
+}
+#workspaces button:hover {
+    border-radius: 5px;
+}
+#workspaces button.active {
+    color: @orange;
+    border-radius: 5px;
+    background-color: @overlay; 
+}
+#workspaces button.active:hover {
+    box-shadow: inset 0 -3px @orange;
+    background-color: @overlay2;
+}
+#workspaces button.urgent {
+    color: @red;
+    border-radius: 5px;
+    border: 2px solid @red;
+}
+#workspaces button.urgent:hover {
+    box-shadow: inset 0 -3px @red;
+}
+#workspaces button.empty {
+    color: @overlay2;
+}
+#workspaces button.empty:hover {
+    box-shadow: inset 0 -3px @overlay2;
+}
+#battery {
+    color: @orange;
+    background-color: @background;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 2px 2px;
+}
+#battery.critical:not(.charging) {
+  background-color: @background;
+  color: @red;
+}
+#battery.charging {
+    color: @power;
+}
+#tray {
+    background-color: @background;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 2px 2px;
+}
+#language {
+    padding: 0 10px;
+    margin: 2px 2px;
+    text-decoration: underline @orange;
+    border-radius: 5px;
+    color: @orange;
+    background-color: @background;
+}
+#language:hover {
+    text-decoration: underline @orange;
+}
+#custom-media {
+    background-color: @background;
+    padding: 0 10px;
+    margin: 2px 2px;
+    border-radius: 5px;
+    color: @orange;
+}
+#custom-powermenu {
+    color: @orange;
+    background-color: @background;
+    padding: 0 10px;
+    margin: 2px 2px;
+    border-radius: 5px;
+}
+#clock {
+    color: @orange;
+    background-color: @background;
+    padding: 0 10px;
+    margin: 2px 2px;
+    border-radius: 5px;
+}
+#pulseaudio.output {
+    color: @orange;
+    border-radius: 5px;
+    padding: 0 10px;
+    margin: 2px 2px;
+    background-color: @background;
+}

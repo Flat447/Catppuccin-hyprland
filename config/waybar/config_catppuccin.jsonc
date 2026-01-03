@@ -1,0 +1,158 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "top", // Waybar position (top|bottom|left|right)
+    "height": 38, // Waybar height (to be removed for auto height)
+    "spacing": 0, // Gaps between modules (4px)
+    "margin-left": 5,
+    "margin-right": 5,
+    "margin-top": 5,
+    "modules-left": [ "image#logo", "hyprland/workspaces", "hyprland/language", "hyprland/window", "custom/media" ],
+    "modules-center": [ "group/center" ],
+    "modules-right": [ "backlight", "group/zvuk", "battery", "group/stats", "network", "tray" ],
+    "network": {
+        "format-wifi": "<span color=\"#A6E3A1\"> </span>{bandwidthUpBytes}",
+        "format-ethernet": "<span color=\"#A6E3A1\">󰈀 </span>{bandwidthUpBytes}",
+        "format-disconnected": "<span color=\"#A6E3A1\"> </span>{bandwidthUpBytes}",
+        "tooltip": false,
+        "interval": 1
+    },
+    "cpu": {
+        "format": "<span color=\"#CBA6F7\"></span> {usage}%",
+        "interval": 1,
+        "tooltip": false
+    },
+    "memory": {
+        "format": "<span color=\"#F5C2E7\"></span> {percentage}%"
+    },
+    "group/stats": {
+        "orientation": "inherit",
+        "modules": [ "memory", "cpu" ]
+    },
+    "image#logo": {
+        "path": "/home/flat/.config/waybar/cachyos.svg",
+        "size": 24,
+        "on-click": "pkill wofi || wofi --show drun -I --xoffset 10 --yoffset 10 --style ~/.config/wofi/style_catppuccin.css",
+        "tooltip": false
+    },
+    "hyprland/workspaces": {
+        "on-click": "activate",
+        "sort-by-number": true,
+        "format": "{icon} {windows}",
+        "tooltip": false,
+        "persistent-workspaces": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6"
+        },
+        "workspace-taskbar": {
+            "enable": true,
+            "update-active-window": true,
+            "format": "{icon}",
+            "tooltip": false
+        }
+    },
+    "hyprland/language": {
+        "format": "<span color=\"#6DB9DE\">󰌌 </span>{}",
+        "format-en": "EN",
+        "format-ru": "РУ",
+        "on-click": "hyprctl switchxkblayout all next"
+    },
+    "hyprland/window": {
+        "format": "{initialTitle}",
+        "max-length": 35,
+        "rewrite": {
+            "": "Hyprland",
+            "kitty": "Terminal"
+        },
+        "separate-outputs": false
+    },
+    "custom/weather": {
+        "format": "<span color=\"#F9E2AF\">󰖞</span> {}",
+        "exec": "bash ~/.config/waybar/weather.sh",
+        "interval": 1
+    },
+    "group/center": {
+        "orientation": "inherit",
+        "modules": [ "group/time", "custom/weather"]
+    },
+    "tray": {
+        "spacing": 10
+    },
+    "group/time": {
+        "modules": ["clock", "clock#simple"],
+        "orientation": "horizontal"
+    },
+    "clock#simple": {
+        "tooltip": false,
+        "format": "{:%H:%M:%S}",
+        "interval": 1,
+        "on-click-right": "gsimplecal"
+    },
+    "clock": {
+        "format":  "<span color=\"#94E2D5\">󰥔 </span>{:L%a %d, %b %Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "<span clock=\"#94E2D5\">󰥔 </span>{:%d-%m-%Y}",
+        "on-click-right": "pkill gsimplecal || gsimplecal"
+    },
+    "backlight": {
+        "format": "{icon} {percent}%",
+        "format-icons": ["<span color=\"#89DCEB\"></span>", "<span color=\"#89DCEB\"></span>", "<span color=\"#89DCEB\"></span>", "<span color=\"#89DCEB\"<</span>", "<span color=\"##89DCEB\"></span>", "<span color=\"#89DCEB\"></span>", "<span color=\"#89DCEB\"></span>", "<span color=\"#89DCEB\"></span>", "<span color=\"#89DCEB\"></span>"],
+        "tooltip": false,
+        "on-scroll-up": "brightnessctl -e4 -n2 set 5%+",
+        "on-scroll-down": "brightnessctl -e4 -n2 set 5%-"
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": "<span color=\"#F9E2AF\"></span> {capacity}%",
+        "format-plugged": "<span color=\"#CBA6F7\"></span> {capacity}%",
+        "tooltip": false,
+        "format-icons": ["<span color=\"#F38BA8\"></span>", "<span color=\"#EBA0AC\"></span>", "<span color=\"#EBA0AC\"></span>", "<span color=\"#EBA0AC\"></span>", "<span color=\"#94E2D5\"></span>"]
+    },
+    "group/zvuk": {
+        "orientation": "horizontal",
+        "modules": ["pulseaudio#output", "pulseaudio#input"]
+    },
+    "pulseaudio#output": {
+        "format": "<span color=\"#89B4FA\">{icon}</span> {volume}%",
+        "format-muted": " ",
+        "format-icons": {
+            "headphone": "",
+            "default": ["", "", ""]
+        },
+        "tooltip": false,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "on-click-right": "pkill pavucontrol || pavucontrol"
+    },
+    "pulseaudio#input": {
+        "format": "{format_source}",
+        "format-source": "<span color=\"#89B4FA\"></span> {volume}%",
+        "format-source-muted": " ",
+        "tooltip": false,
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle",
+        "on-scroll-up": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+",
+        "on-scroll-down": "wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%-",
+        "on-click-right": "pkill pavucontrol || pavucontrol"
+    },
+	"custom/media": {
+    	"format": "{icon}",
+		"return-type": "json",
+		"format-icons": {
+			"Playing": "",
+			"Paused": ""
+		},
+		"max-length": 20,
+		"exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+		"on-click": "playerctl play-pause",
+		"on-scroll-up": "playerctl next",
+		"on-scroll-down": "playerctl previous",
+        "tooltip": false
+	}
+}

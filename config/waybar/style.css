@@ -1,0 +1,376 @@
+@import "macchiato.css";
+
+* {
+  font-family: "JetBrains Mono", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+window#waybar {
+  background-color: transparent;
+  transition-property: background-color;
+  transition-duration: 0.5s;
+}
+
+button {
+  /* Use box-shadow instead of border so the text isn't offset */
+  box-shadow: inset 0 -3px transparent;
+  /* Avoid rounded borders under each button name */
+  border: none;
+  border-radius: 0;
+}
+
+/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
+button:hover {
+  background: inherit;
+  box-shadow: inset 0 -3px #464f50;
+}
+#custom-mpv_music {
+  color: #1e2326;
+  background-color: #464f50;
+  border: 2px solid #1e2326;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+#custom-wall_random {
+  color: #1e2326;
+  background-color: #464f50;
+  border: 2px solid #1e2326;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+#image.appmenu {
+  background-color: #464f50;
+  padding: 0 10px;
+  border: 2px solid #1e2326;
+  border-radius: 4px
+}
+#image.wall {
+  background-color: #464f50;
+  padding: 0 10px;
+  border: 2px solid #1e2326;
+  border-radius: 5px;
+}
+#custom-emoji_menu {
+  color: #1e2326;
+  background-color: #464f50;
+  border: 2px solid #1e2326;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+#custom-weather {
+  background-color: #464f50;
+  color: #1e2326;
+  border: 2px solid #1e2326;
+  border-radius: 5px;
+  padding: 3px 10px;
+}
+#custom-nemo {
+  background-color: #464f50;
+  color: #1e2326;
+  border: 2px solid #1e2326;
+  border-radius: 5px;
+  padding: 0 10px;
+  color: #1e2326;
+}
+#custom-cpupower {
+  background-color: #464f50;
+  border: 2px solid #1e2326;
+  border-radius: 5px;
+  padding: 0 10px;
+  color: #1e2326;
+}
+#custom-swaync {
+  border: 2px solid #1e2326;
+  background-color: #464f50;
+  border-radius: 5px;
+  padding: 0 10px;
+  color: #1e2326;
+}
+#custom-zapret {
+  background-color: #464f50;
+  border: 2px solid #1e2326;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+#custom-cmus {
+  background-color: #464f50;
+  border: 2px solid #1e2326;
+  color: #1e2326;
+  border-radius: 5px;
+  padding: 3px 10px;
+}
+#tray {
+  background-color: #464f50;
+  border: 2px solid #1e2326;
+  border-radius: 5px;
+  padding:0 10px;
+}
+/* you can set a style on hover for any module like this */
+#zvuk {
+  background-color: #464f50;
+  border: 2px solid #1e2326;
+  color: #4C3743;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+#custom-kitty {
+  color: #1e2326;
+  background-color: #464f50;
+  border: 2px solid #1e2326;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+#pulseaudio {
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 5px;
+}
+
+#pulseaudio.output.muted {
+  color: #4C3743;
+}
+#pulseaudio.input.source-muted {
+  color: #4C3743;
+}
+#network {
+  color: #45443C;
+  background-color: #464f50;
+  border: 2px solid #1e2326;
+  border-radius: 5px;
+}
+#cava {
+  color: #ffffff;
+  background-color: #464f50;
+  border-radius: 5px;
+  border: 2px solid #1e2326;
+  padding: 0 5px;
+}
+
+#quicklinks {
+  color: green;
+}
+#workspaces {
+  background-color: #1e2326;
+  border-radius: 5px;
+}
+#workspaces button {
+  padding: 0 5px;
+  color: #464f50;
+}
+#custom-poweroff {
+  color: #1e2326;
+  background-color: #464f50;
+  border-radius: 5px;
+  border-top: 2px solid #1e2326;
+  border-bottom: 2px solid #1e2326;
+  border-right: 2px solid #1e2326;
+  border: 2px solid #1e2336;
+}
+#custom-logout {
+  color: #1e2326;
+  background-color: #464f50;
+  border-top: 2px solid #1e2326;
+  border-bottom: 2px solid #1e2326;
+  border: 2px solid #1e2326;
+}
+#custom-lock {
+  color: #1e2326;
+  background-color: #464f50;
+  border-top: 2px solid #1e2326;
+  border: 2px solid #1e2326;
+}
+#custom-reboot {
+  color: #1e2326;
+  background-color: #464f50;
+  border-top: 2px solid #1e2326;
+  border: 2px solid #1e2326;
+}
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  padding: 0 5px;
+}
+
+#custom-appmenu {
+  background-color: #464f50;
+  color: #1e2326;
+  border-radius: 5px;
+  border: 2px solid #1e2326;
+}
+#workspaces button.active {
+  background-color: #464f50;
+  color: #1e2326;
+  border-radius: 5px;
+  padding: 0 5px;
+  border: 2px solid #1e2326;
+}
+#workspaces button.urgent {
+  background-color: #4C3743;
+  border-radius: 5px;
+  border: 2px solid #43333c;
+}
+#workspaces button.urgent:hover {
+  box-shadow: inset 0 -3px #43333cff;
+}
+#custom-media {
+  color: #1e2326;
+  background-color: #464f50;
+  border: 2px solid #1e2326;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+
+#language {
+  color: #1e2326;
+  background-color: #464f50;
+  border-top: 2px solid #1e2326;
+  border-bottom: 2px solid #1e2326;
+  border-radius: 5px;
+  border: 2px solid #1e2326;
+}
+#language:hover {
+  text-decoration: underline #1e2326;
+}
+#custom-cliphist {
+  color: #1e2326;
+  background-color: #464f50;
+  border: 2px solid #1e2326;
+  border-radius: 5px;
+  padding: 0 10px;
+}
+#taskbar {
+  background-color: #464f50;
+  border: 2px solid #1e2326;
+  border-radius: 5px;
+  border-bottom: 2px solid #1e2326;
+}
+#taskbar button:hover {
+  background-color: #1e2326;
+  border-radius: 5px;
+}
+#battery {
+  color: #3C4841;
+  background-color: #464f50;
+  border: 2px solid #1e2326;
+  border-bottom: 2px solid #1e2326;
+}
+#battery.charging {
+  color: #3F5865;
+}
+#mode {
+  background-color: #64727d;
+  box-shadow: inset 0 -3px #333c43
+}
+
+#bluetooth {
+  border: 2px solid #1e2326;
+  border-bottom: 2px solid #1e2326;
+  color: #4F5B58;
+  border-radius: 5px;
+  background-color: #464f50;
+}
+#network {
+  border: 2px solid #1e2326;
+  border-bottom: 2px solid #1e2326;
+}
+
+#temperature {
+  color: @sky;
+}
+
+#battery {
+  color: #3C4841;
+  border-radius: 5px;
+}
+#custom-poweroff,
+#custom-lock,
+#custom-logout,
+#custom-reboot {
+  border-radius: 5px;
+}
+
+#clock,
+#custom-poweroff,
+#custom-lock,
+#custom-logout,
+#custom-reboot,
+#language,
+#custom-appmenu,
+#battery,
+#custom-cava,
+#cpu,
+#memory,
+#temperature,
+#network {
+  padding: 3px 10px;
+}
+#clock {
+  color: #374145;
+  background-color: #464f50;
+  border: 2px solid #1e2326;
+  border-radius: 5px;
+  border-bottom: 2px solid #1e2326;
+}
+#custom-calculator {
+  color: #1e2326;
+  background-color: #464f50;
+  border-radius: 5px;
+  border: 2px solid #1e2326;
+  border-top: 2px solid #1e2326;
+  border-bottom: 2px solid #1e2326;
+}
+#cpu {
+  color: @peach;
+}
+
+#memory {
+  color: @green;
+}
+
+#window {
+  color: @text;
+}
+
+.modules-right,
+.modules-left,
+.modules-center {
+  background-color: @base;
+  border-radius: 15px;
+}
+.modules-right {
+  padding: 0 10px;
+}
+
+.modules-left {
+  padding: 0 20px;
+}
+
+.modules-center {
+  padding: 0 10px;
+}
+
+@keyframes blink {
+  to {
+    color: #000000;
+  }
+}
+
+/* Using steps() instead of linear as a timing function to limit cpu usage */
+#battery.critical:not(.charging) {
+  background-color: #f53c3c;
+  color: #333c43;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+label:focus {
+  background-color: #000000;
+}
+
+
