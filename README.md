@@ -9,7 +9,7 @@
 
 ## Installation
 ```bash
-sudo pacman -S ayugram-desktop kitty waybar ttf-jetbrains-mono ttf-jetbrains-mono-nerd woff2-font-awesome otf-font-awesome wofi swww yay obsidian file-roller evince nwg-look waypaper firefox hyprlock hypridle hyprsunset hyprcursor grim flameshot xorg freetype2 fish fastfetch starship zoxide fzf thunar jq cliphist wl-clipboard wl-clip-persist git pavucontrol gsimplecal curl wget viewnior file powerline-fonts inetutils udiskie gvfs tumbler ttf-dejavu mpv lsd sl 
+sudo pacman -S ayugram-desktop kitty waybar ttf-jetbrains-mono ttf-jetbrains-mono-nerd woff2-font-awesome otf-font-awesome wofi swww yay obsidian file-roller evince nwg-look waypaper firefox hyprlock hypridle hyprsunset hyprcursor grim flameshot xorg freetype2 fish fastfetch starship zoxide fzf thunar jq cliphist wl-clipboard wl-clip-persist git pavucontrol gsimplecal curl wget viewnior file powerline-fonts inetutils udiskie gvfs tumbler ttf-dejavu mpv lsd sl hyprpicker
 
 yay -S eww swaync-git pfetch zfetch audacious-gtk3 audacious-plugins-gtk3 catppuccin-cursors-macchiato visual-studio-code-bin
 ```
