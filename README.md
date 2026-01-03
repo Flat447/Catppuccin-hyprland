@@ -138,3 +138,5 @@ In `~/.config/waybar/config_catppuccin.jsonc` replace `flat` on your username
 - Bar: **[Waybar](https://github.com/Alexays/Waybar)**
 - Applications Launcher: **[Wofi](https://github.com/SimplyCEO/wofi)**
 - Fetch: **[Fastfetch](https://github.com/fastfetch-cli/fastfetch)**
+## Themes
+- GTK Theme: **[Catppuccin Sapphire](https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme)**
