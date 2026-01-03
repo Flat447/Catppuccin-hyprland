@@ -1,0 +1,26 @@
+.time-widget {
+  background-color: transparent;
+}
+
+.clock-container {
+  background-color: transparent;
+}
+
+.colon-label {
+  animation-name: blink;
+  animation-duration: 2s;
+  animation-timing-function: steps(100);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.clock-window {
+  background-color: transparent;
+  color: #70BCE0;
+}
+@keyframes blink {
+  to {
+    color: transparent;
+  }
+}
+

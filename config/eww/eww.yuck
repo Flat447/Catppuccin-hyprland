@@ -1,0 +1,85 @@
+;; Ваш обновленный конфиг
+(defvar time-visible false)
+
+(defpoll hours :interval "1s"
+                 :initial "initial-value"
+                 :run-while time-visible
+    'date +%H')
+    
+(defpoll minutes :interval "1s"
+                 :initial "initial-value"
+                 :run-while time-visible
+    'date +%M')
+
+;; Виджет времени
+(defwidget time-widget []
+  (box :class "time-box"
+       :halign "center"
+       :valign "center"
+       
+       (label :class "clock-label"
+              :text hours)
+       
+       (label :class "colon-label" 
+              :text ":")
+       
+       (label :class "clock-label"
+              :text minutes)))
+
+;; Главный контейнер
+(defwidget clock-container []
+  (box :class "clock-container"
+       :orientation "v"
+       :halign "center"
+       :valign "center"
+       :space-evenly false
+       
+       (time-widget)))
+
+(defwindow clock
+  :monitor 0
+  :geometry (geometry :x "300px"
+                      :y "400px"
+                      :width "100%"
+                      :height "100%"
+                      :anchor "center")
+  :stacking "bg"
+  :windowtype "dock"
+  :focusable false
+  
+  (clock-container))
+(defwindow clock-window
+  :monitor 0
+  :geometry (geometry :x "0%"
+                      :y "5%"
+                      :width "32%"
+                      :height "200px")
+  :reserve (struts :side "top" :distance "0px" :position "top")
+  :stacking "bg"
+  :windowtype "dock"
+  :focusable false
+  :style "background-color: transparent;"
+  (box :class "clock-container"
+       :orientation "v"
+       :halign "center"
+       :valign "center"
+       :space-evenly false
+       :style  "background-color: transparent;"
+       
+       (box :class "time-box"
+            :halign "center"
+            :valign "center"
+            :style  "background-color: transparent;"
+            
+            (label :class "clock-label"
+                   :text hours
+                   :style "font-size: 72px; font-weight: 800; background-color: transparent;")
+                   
+            (label :class "colon-label" 
+                   :text ":"
+                   :style "font-size: 72px; font-weight: 800; background-color: transparent;")
+                   
+            (label :class "clock-label"
+                   :text minutes
+                   :style "font-size: 72px; font-weight: 800; background-color: transparent;"))))
+
