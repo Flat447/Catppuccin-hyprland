@@ -109,7 +109,7 @@ mkdir -p ~/.config/tmux/plugins && git clone https://github.com/tmux-plugins/tpm
 | `webcam` | `mpv av://v4l2:/dev/video0` | View webcam feed with mpv |
 
 ## Multiplexer: Tmux
-`Tmux` is a lerminal multiplexer
+`Tmux` is a terminal multiplexer
 
 ### Hotkeys
 
