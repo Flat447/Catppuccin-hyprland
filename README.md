@@ -24,10 +24,9 @@ cd Catppuccin-hyprland/
 
 In `~/.config/waybar/config_catppuccin.jsonc` replace `flat` on your username
 
-    > **Note:** You must install the Tmux Plugin Manager manually:
-    ```bash
-    mkdir -p ~/.config/tmux/plugins && git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
-    ```
+```bash
+mkdir -p ~/.config/tmux/plugins && git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+```
 ## Hyprland
 ### Hotkeys
 | Keybinding            | Description                                     |
