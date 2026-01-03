@@ -137,5 +137,6 @@ mkdir -p ~/.config/tmux/plugins && git clone https://github.com/tmux-plugins/tpm
 - Bar: **[Waybar](https://github.com/Alexays/Waybar)**
 - Applications Launcher: **[Wofi](https://github.com/SimplyCEO/wofi)**
 - Fetch: **[Fastfetch](https://github.com/fastfetch-cli/fastfetch)**
+- Widget Clock: **[EWW](https://github.com/elkowar/eww)**
 ## Themes
 - GTK Theme: **[Catppuccin Sapphire](https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme)**
