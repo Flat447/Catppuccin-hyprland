@@ -140,3 +140,4 @@ mkdir -p ~/.config/tmux/plugins && git clone https://github.com/tmux-plugins/tpm
 - Widget Clock: **[EWW](https://github.com/elkowar/eww)**
 ## Themes
 - GTK Theme: **[Catppuccin Sapphire](https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme)**
+- Icon Theme: **[Catpuuccin Frappe](https://github.com/Fausto-Korpsvart/Catppuccin-GTK-Theme/tree/main/icons/Catppuccin-Frappe)**
